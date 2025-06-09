@@ -4,7 +4,7 @@
   vars: # PLAY level variables, global variables
     NAME: "Rajoli Naveen"
     LAST_NAME: "Kumar"
-    NUM: "DevOps"
+    NUM: "1234"
     LOCATION: "india"
   tasks:
   - name: Task 1 
