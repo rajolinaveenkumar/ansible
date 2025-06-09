@@ -1,0 +1,21 @@
+- name: creation user and group # The below playbook is used to ctreate users groups 
+  hosts: servers
+  become: yes # ensures that all tasks in this playbook are executed with elevated privileges.(root user)
+  tasks:
+  - name : creating new user
+    ansible.builtin.user: 
+      name: rajoli
+      state: present
+
+  - name: creating group 
+    ansible.builtin.group:
+      name: rnk
+      state: present
+
+  - name: geatharing system information 
+    ansible.builtin.setup:
+
+  # - name: Show all gathered facts
+  #   ansible.builtin.debug:
+  #     var: ansible_facts
+  
