@@ -19,6 +19,7 @@
 #--------PLAY3-------
 - name: hello world playbook # PlayBook Name
   hosts: local
+  connection: local # managing its own node, no need of credentials
   tasks:
   - name: print hello world
     ansible.builtin.debug:
