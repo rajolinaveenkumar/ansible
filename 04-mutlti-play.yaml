@@ -17,13 +17,13 @@
       msg: "Hello from  PLAY2 and TASK1"
 
 #--------PLAY3-------
-- name: hello world playbook # PlayBook Name
+- name: hello world playbook-3 # PlayBook Name
   hosts: local
   connection: local # managing its own node, no need of credentials
   tasks:
   - name: print hello world
     ansible.builtin.debug:
-      msg: "printing hello world text"
+      msg: "printing hello world"
   - name: print hello india
     ansible.builtin.debug:
       msg: "printing hello india"
