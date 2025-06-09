@@ -1,7 +1,7 @@
-- name: Variables
+- name: Variables from files
   hosts: local
   connection: local
-  vars_files:
+  vars_files:  # variables fitch from another file var.yaml files 
   - var.yaml
   tasks:
   - name: Task 1 
