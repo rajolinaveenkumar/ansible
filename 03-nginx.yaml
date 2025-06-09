@@ -18,4 +18,4 @@
       
   - name: print the nginx service status
     ansible.builtin.debug:
-      msg: "{{ ansible_facts.services['nginx.service'] }}"
+      msg: "{{ ansible_facts.service_facts }}"
