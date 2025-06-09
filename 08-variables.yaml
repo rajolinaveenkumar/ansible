@@ -1,12 +1,18 @@
 - name: Variables
   hosts: local
   connection: local
-  vars: # Play level varaibles 
+  vars: # PLAY level variables, global variables
     NAME: "Rajoli Naveen"
     LAST_NAME: "Kumar"
     NUM: "DevOps"
     LOCATION: "india"
   tasks:
-  - name: 
+  - name: Task 1 
+    ansible.builtin.debug:
+      msg: "My name is {{ NAME }} {{ LAST_NAME }} number is {{ NUM }} and my location is {{ LOCATION }}"
+
+  - name: Task2
+    vars:
+      NAME: "Hello"
     ansible.builtin.debug:
       msg: "My name is {{ NAME }} {{ LAST_NAME }} number is {{ NUM }} and my location is {{ LOCATION }}"
