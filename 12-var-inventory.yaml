@@ -1,4 +1,4 @@
-- name: Variables from inventory.ini
+- name: Variables from inventory
   hosts: local
   connection: local
   tasks:
