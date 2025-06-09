@@ -4,12 +4,16 @@
   vars_prompt:
   - name: NAME
     prompt: "Please enter your name"
+    # private: false #it is not confidential information(if you enable this we can see the input information in screen)
   - name: LAST_NAME
     prompt: "Please enter you last name"
+    # private: false #it is not confidential information(if you enable this we can see the input information in screen)
   - name: LOCATION
     prompt: "please enter your location"
+    private: false 
   - name: NUM
     prompt: "please enter your number"
+    private: false 
   tasks:
   - name: Task 1 
     ansible.builtin.debug:
