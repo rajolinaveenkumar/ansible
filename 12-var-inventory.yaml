@@ -4,4 +4,4 @@
   tasks:
   - name: Task 1 
     ansible.builtin.debug:
-      msg: "My name is {{ MY_NAME }} {{ LAST_NAME }} , number is {{ NUM }} and my location is {{ LOCATION }}"
+      msg: "My name is {{ NAME }} {{ LAST_NAME }} , number is {{ NUM }} and my location is {{ LOCATION }}"
