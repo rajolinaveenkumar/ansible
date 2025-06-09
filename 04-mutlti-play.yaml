@@ -16,3 +16,13 @@
     ansible.builtin.debug:
       msg: "Hello from  PLAY2 and TASK1"
 
+#--------PLAY3-------
+- name: hello world playbook # PlayBook Name
+  hosts: local
+  tasks:
+  - name: print hello world
+    ansible.builtin.debug:
+      msg: "printing hello world text"
+  - name: print hello india
+    ansible.builtin.debug:
+      msg: "printing hello india"
