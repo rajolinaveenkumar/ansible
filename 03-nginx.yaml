@@ -1,14 +1,24 @@
-- name: install nginx
-  hosts: web
-  become: yes
+- name: Install and start of nginx service # PlayBook Name
+  hosts: servers
+  become: yes # -b
   tasks:
-  - name: installing nginx
+  - name: install nginx
     ansible.builtin.package:
       name: nginx
-      state: installed 
-  
-  - name: starting nginx service
+      state: installed
+
+  - name: start nginx service
     ansible.builtin.service:
       name: nginx
-      state: "started"
-      enabled: yes
+      enabled: yes # here "enabled: true", we can use this one also for enabled
+      state: restarted
+
+  - name: checking the nginx service
+    ansible.builtin.service_facts:
+      
+  - name: print the nginx service status
+    ansible.builtin.debug:
+      msg: ansible_facts.services
+
+
+  
