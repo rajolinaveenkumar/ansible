@@ -11,6 +11,13 @@
     ansible.builtin.debug:
       msg: "My name is {{ NAME }} {{ LAST_NAME }} , number is {{ NUM }} and my location is {{ LOCATION }}"
 
+  - name: Task2
+    vars: # Task level variables, accessible only with in the task. Task variables can override play level variables. Local variables
+      NAME: "Hello"
+      LAST_NAME: "Naveen"
+    ansible.builtin.debug:
+      msg: "My name is {{ NAME }} {{ LAST_NAME }} , number is {{ NUM }} and my location is {{ LOCATION }}"
+
 
 
 
