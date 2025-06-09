@@ -14,5 +14,6 @@
   - name: Task2
     vars:
       NAME: "Hello"
+      LAST_NAME: "Naveen"
     ansible.builtin.debug:
       msg: "My name is {{ NAME }} {{ LAST_NAME }} number is {{ NUM }} and my location is {{ LOCATION }}"
