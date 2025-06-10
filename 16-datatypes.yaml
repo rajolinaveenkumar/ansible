@@ -23,6 +23,10 @@
       - { nested: "map in list" }    # dictionary inside a list
 
   tasks:
+    - name: print data types
+      ansible.builtin.debug:
+        msg: "course_name is {{ course_name}}, duration is {{ duration }} , rating is {{ rating }}, is this live?: {{ live }} , prerequisites are {{ prerequisites }} , tools are {{ tools }}& mixed_list {{ mixed_list }}"
+
     - name: Print All Data Types
       ansible.builtin.debug:
         var: course_name
