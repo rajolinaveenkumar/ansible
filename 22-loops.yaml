@@ -1,0 +1,13 @@
+- name: installing apps
+  hosts: local
+  become: yes
+  tasks:
+  - name: installing apps with loops
+    ansible.builtin.dnf:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - { name: 'git' , state: 'installed'}
+    - { name: 'mysql' , state: 'absent'}
+    - { name: 'gcc' , state: 'absent'}
+    - { name: 'nginx' , state: 'absent'}

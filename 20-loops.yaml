@@ -1,12 +1,12 @@
-- name: loops
+- name: loops practice
   hosts: local
+  connection: local
   tasks:
-  - name: print loops
+  - name: print god names
     ansible.builtin.debug:
-      msg: "tools are {{ item }}"
+      msg: "god names are: {{ item }}"
     loop:
-    - nginx
-    - git
-    - gcc
-    - mysql
-    - zip
+    - loard_hanuman
+    - loard_ganesh
+    - loard_ayyapa
+    - loard_shiva
