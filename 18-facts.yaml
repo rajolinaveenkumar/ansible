@@ -1,0 +1,6 @@
+- name: print facts 
+  hosts: local
+  tasks:
+  - name: print or gathring facts 
+    ansible.builtin.debug:
+      msg: {{ ansible_facts }}
