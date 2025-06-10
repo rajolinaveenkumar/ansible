@@ -1,0 +1,73 @@
+- name: filters
+  hosts: local
+  connection: local
+  tasks:
+  - name: handle undefine variable
+    ansible.builtin.debug:
+      msg: " hello {{ person | default('ramesh') }}"
+
+# NOTE--> person is variable. if variable not exist its take default variable as 'ramesh'.
+# OUTPUT--> "msg": " hello ramesh"
+
+  - name: convert list to string
+    vars:
+      fruits: "apple, banana, orange, watermelon" # string
+    ansible.builtin.debug:
+      msg: " fruits are: {{ fruits | split(',') }}"
+
+# OUTPUT: "msg": " fruits are: ['apple', ' banana', ' orange', ' watermelon']"
+
+  - name: convert map(dict) into list
+    vars:
+      course:
+        name: ansible
+        duration: 120
+        trainer: naveen rajoli
+    ansible.builtin.debug:
+      msg: "course info:- {{ course | dict2items }}"
+
+# OUTPUT--> "msg": "course info:- [{'key': 'name', 'value': 'ansible'}, {'key': 'duration', 'value': 120}, {'key': 'trainer', 'value': 'naveen rajoli'}]"
+# }
+
+  - name: convert list into map(dict)
+    vars:
+      course:
+      - {'key': 'name', 'value': 'ansible'}
+      - {'key': 'duration', 'value': 120}
+      - {'key': 'trainer', 'value': 'naveen rajoli'}
+    ansible.builtin.debug:
+      msg: "course info:- {{ course | items2dict }}"
+
+# OUTPUT--> "msg": "course info:- {'name': 'ansible', 'duration': 120, 'trainer': 'naveen rajoli'}"
+
+  - name: convert lower to upper letters
+    vars:
+      name: NAVeen kUMar
+    ansible.builtin.debug:
+      msg: "hello {{ name | upper }}"
+
+# OUTPUT:---> "msg": "hello NAVEEN KUMAR"
+
+
+  - name: convert upper to lower letters
+    vars:
+      name: NAVeen kUMar
+    ansible.builtin.debug:
+      msg: "hello {{ name | lower }}"
+
+# OUTPUT:---> "msg": "hello naveen kumar"
+
+  - name: print min and max
+    vars:
+      NUM: [1,24,234,2456]
+    ansible.builtin.debug:
+      msg: "min number is {{ NUM | min}}, max number is {{ NUM | max }}"
+
+# OUTPUT:---> "msg": "min number is 1, max number is 2456"
+
+  - name: check ipaddress is valid or not
+    vars:
+      ip: "192.168.1.1"
+    ansible.builtin.debug:
+      msg: "{{ ip | ansible.utils.ipaddr }}"
+

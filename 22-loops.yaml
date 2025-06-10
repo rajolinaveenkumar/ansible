@@ -11,3 +11,18 @@
     - { name: 'mysql' , state: 'absent'}
     - { name: 'gcc' , state: 'installed'}
     - { name: 'nginx' , state: 'absent'}
+
+
+
+
+
+
+
+
+
+
+
+
+#     note:
+# present:- to install package
+# absent:- to uninstall package
