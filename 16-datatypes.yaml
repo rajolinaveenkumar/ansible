@@ -1,0 +1,42 @@
+- name: Ansible Data Types Example
+  hosts: localhost
+  connection: local
+  vars:
+    course_name: "DevOps with AWS"    # string
+    duration: 120                     # number (integer)
+    rating: 4.8                       # number (float)
+    topics:                           # list (array) , []
+      - linux
+      - shell
+      - ansible
+      - aws
+    live: true                        # boolean (true/false)
+    prerequisites: null               # null (empty or undefined value)
+    tools:                            # dictionary / map (key-value pairs), {}
+      ci: jenkins
+      cloud: aws
+      containerization: docker
+    mixed_list:                      # list with mixed data types (valid in YAML)
+      - 1
+      - "two"
+      - true
+      - { nested: "map in list" }    # dictionary inside a list
+
+  tasks:
+    - name: Print All Data Types
+      ansible.builtin.debug:
+        var: course_name
+    - debug:
+        var: duration
+    - debug:
+        var: rating
+    - debug:
+        var: topics
+    - debug:
+        var: live
+    - debug:
+        var: prerequisites
+    - debug:
+        var: tools
+    - debug:
+        var: mixed_list
