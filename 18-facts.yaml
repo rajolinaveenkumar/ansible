@@ -4,3 +4,17 @@
   - name: print or gathring facts 
     ansible.builtin.debug:
       msg: "{{ ansible_facts }}"
+
+
+
+# {{ ansible_facts }} is a Jinja2 variable in Ansible that holds all the system facts collected from the target hosts. 
+# These facts are automatically gathered by Ansible during the fact-gathering process, which occurs by default at the beginning of each play unless explicitly disabled.
+
+# What Is Inside ansible_facts?
+# ansible_facts is a dictionary containing a wide range of information about the target system, such as:
+# 1.Operating System Information:
+# 2.Networking Information:
+# 3.Hardware Details:
+# 4.Hostname and Domain:
+# 5.File System and Disk Information:
+# 6.Custom Facts:
