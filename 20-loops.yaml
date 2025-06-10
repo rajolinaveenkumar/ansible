@@ -1,0 +1,12 @@
+- name: loops
+  hosts: local
+  tasks:
+  - name: print loops
+    ansible.builtin.debug:
+      msg: "tools are {{ item }}"
+    loops:
+    - nginx
+    - git
+    - gcc
+    - mysql
+    - zip
