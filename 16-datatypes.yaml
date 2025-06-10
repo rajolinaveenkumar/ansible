@@ -1,5 +1,5 @@
 - name: Ansible Data Types Example
-  hosts: localhost
+  hosts: local  # or localhost 
   connection: local
   vars:
     course_name: "DevOps with AWS"    # string
@@ -28,7 +28,7 @@
         var: course_name
     - debug:
         var: duration
-    - debug:
+    - debug: 
         var: rating
     - debug:
         var: topics
