@@ -9,5 +9,5 @@
     loop:
     - { name: 'git' , state: 'installed'}
     - { name: 'mysql' , state: 'absent'}
-    - { name: 'gcc' , state: 'absent'}
+    - { name: 'gcc' , state: 'installed'}
     - { name: 'nginx' , state: 'absent'}
